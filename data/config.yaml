@@ -1,0 +1,29 @@
+Câmara_dos_Deputados:
+  overview:
+    description: "A Câmara dos Deputados representa um dos pilares fundamentais do sistema legislativo brasileiro, sendo uma das duas casas do Congresso Nacional."
+    structure: 
+      deputados: 
+        total: 513
+        election: "eleitos pelo voto popular"
+      mission: "Representar o povo brasileiro e seus interesses."
+      representation: "Distribuídos proporcionalmente à população de cada estado."
+  functions:
+    main_attributions:
+      - "Elaboração e votação de leis."
+      - "Fiscalização dos atos do Poder Executivo."
+      - "Debate de questões de interesse nacional."
+    organization:
+      committees: 
+        type: 
+          - "Comissões permanentes"
+          - "Comissões temporárias"
+        purpose: "Discutir e aperfeiçoar projetos de lei antes de irem a plenário."
+    role_in_democracy:
+      description: "Importante papel no sistema de freios e contrapesos da democracia brasileira."
+      powers:
+        - "Instaurar Comissões Parlamentares de Inquérito (CPIs)."
+        - "Sabatinar autoridades."
+        - "Autorizar processos contra o Presidente da República."
+    transparency:
+      description: "Sistema de transparência que permite aos cidadãos acompanhar todas as atividades parlamentares."
+      commitment: "Reforçando o compromisso com a democracia participativa."

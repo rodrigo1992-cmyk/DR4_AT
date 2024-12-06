@@ -1,0 +1,44 @@
+[
+    [
+        {
+            "Question": "What are the key drivers of variation in average monthly spending among deputies?",
+            "Answer": "The provided dataset only contains the net value of spending for each deputy, without any additional information on potential drivers of variation such as department, geographical location, responsibilities, or time period.  Therefore, it's impossible to determine key drivers of spending variation from this data alone.  Further data is needed to answer this question meaningfully."
+        },
+        {
+            "Question": "How does average monthly spending per deputy compare across different departments or geographical locations?",
+            "Answer": "The dataset lacks information on the department or geographical location of each deputy. Consequently, a comparison of average monthly spending across different departments or geographical locations is not possible. Additional data is required."
+        },
+        {
+            "Question": "Are there any significant trends or patterns in average monthly spending over time (e.g., seasonal variations, increases/decreases)?",
+            "Answer": "The dataset doesn't include a time component (e.g., date, month, year) associated with each deputy's spending.  Therefore, identifying trends or patterns in spending over time is impossible.  To analyze temporal trends, the dataset needs to be expanded to include time-related information for each spending record."
+        }
+    ],
+    [
+        {
+            "Question": "What are the most frequent expense types and their relative proportions within the total deputy spending in 2024?",
+            "Answer": "Based on the provided data, the most frequent expense types in 2024 are:\n\n1. **Manutenção de Escritório de Apoio à Atividade Parlamentar:** 58.80% of the total spending.\n2. **Divulgação da Atividade Parlamentar:** 26.31% of the total spending.\n3. **Combustíveis e Lubrificantes:** 9.90% of the total spending.\n\nOther expense types represent a significantly smaller proportion of the total spending."
+        },
+        {
+            "Question": "Are there significant differences in expense type distributions across different deputies or departments?",
+            "Answer": "The provided dataset does not contain information about individual deputies or departments. Therefore, it's impossible to determine whether significant differences exist in expense type distributions across different deputies or departments based on this data alone."
+        },
+        {
+            "Question": "How has the distribution of expense types changed over time (e.g., comparing to previous years, if data is available)?",
+            "Answer": "The dataset only provides information for a single year (implied as 2024).  Therefore, it's not possible to analyze changes in expense type distributions over time with the given data.  Data from previous years would be needed to conduct such an analysis."
+        }
+    ],
+    [
+        {
+            "Question": "What are the peak spending months and what factors might explain these peaks?",
+            "Answer": "The peak spending months are June, July, and August.  Factors explaining these peaks could include seasonal spending patterns (e.g., summer vacations, back-to-school shopping), or business-related factors specific to the data source (e.g., increased sales during a particular season)."
+        },
+        {
+            "Question": "Is there a consistent monthly spending pattern throughout the year, or is spending highly variable?",
+            "Answer": "Spending is highly variable throughout the year.  There's a dramatic increase in spending from May to August, followed by a sharp decline in the subsequent months.  The first three months of the year show significantly lower spending compared to the rest of the year."
+        },
+        {
+            "Question": "How does the average monthly spending in 2024 compare to previous years' averages (if available)?",
+            "Answer": "The provided dataset only contains data for 2024 (months 3-12). Therefore, a comparison with previous years' averages cannot be made. More data is needed to calculate and compare average monthly spending across different years."
+        }
+    ]
+]
