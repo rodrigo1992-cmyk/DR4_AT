@@ -17,6 +17,8 @@ ipykernel = "*"
 pyyaml = "*"
 pypdf2 = "*"
 imageio = "*"
+faiss-cpu = "*"
+sentence-transformers = "*"
 
 [dev-packages]
 
