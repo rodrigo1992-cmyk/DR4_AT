@@ -107,7 +107,7 @@ with tabs[1]:
 with tabs[2]:
     st.title('Resumo das Proposições em Tramitação')
     try:
-        with open('C:/Users/RodrigoPintoMesquita/Documents/GitHub/DR4_AT/data/sumarizacao_proposicoes', 'r', encoding='utf-8') as file:
+        with open('C:/Users/RodrigoPintoMesquita/Documents/GitHub/DR4_AT/data/sumarizacao_proposicoes.json', 'r', encoding='utf-8') as file:
             for line in file:
                 st.markdown(line.strip())
     except FileNotFoundError:
