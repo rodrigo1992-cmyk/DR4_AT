@@ -19,7 +19,7 @@ file_config = os.path.join(base_dir, 'data', 'config.yaml')
 file_insights_distribuicao_deputados = os.path.join(base_dir, 'data', 'insights_distribuicao_deputados.json')
 file_serie_despesas_diárias_deputados = os.path.join(base_dir, 'data', 'serie_despesas_diárias_deputados.parquet')
 file_insights_despesas_deputados = os.path.join(base_dir, 'data', 'insights_despesas_deputados.json')
-file_distribuicao_deputados = os.path.join(base_dir, 'data', 'distribuicao_deputados.png')
+file_distribuicao_deputados = os.path.join(base_dir, 'docs', 'distribuicao_deputados.png')
 llm_model_dir = os.path.join(base_dir, 'data', 'bertimbau')
 
 def search_and_self_ask(user_input):
