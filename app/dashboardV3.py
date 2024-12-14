@@ -11,12 +11,22 @@ import faiss
 from sentence_transformers import SentenceTransformer
 import numpy as np
 
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+#Após a conclusão do trabalho precisei ajustar as importações dos arquivos pois estava dando Bug ao realizar o deploy da aplicação online.
+file_input_embedding = os.path.join(base_dir, 'data', 'input_embedding.json')
+file_config = os.path.join(base_dir, 'data', 'config.yaml')
+file_insights_distribuicao_deputados = os.path.join(base_dir, 'data', 'insights_distribuicao_deputados.json')
+file_serie_despesas_diárias_deputados = os.path.join(base_dir, 'data', 'serie_despesas_diárias_deputados.parquet')
+file_insights_despesas_deputados = os.path.join(base_dir, 'data', 'insights_despesas_deputados.json')
+file_distribuicao_deputados = os.path.join(base_dir, 'data', 'distribuicao_deputados.png')
+llm_model_dir = os.path.join(base_dir, 'data', 'bertimbau')
+
 def search_and_self_ask(user_input):
-    with open('data/input_embedding.json', 'r', encoding='utf-8') as file:
+    with open(file_input_embedding, 'r', encoding='utf-8') as file:
         texto = json.load(file)
         
     model_name = 'neuralmind/bert-base-portuguese-cased'
-    llm_model_dir = 'data/bertimbau_'
 
     embedding_model = SentenceTransformer(model_name, cache_folder=llm_model_dir, device='cpu')
 
@@ -90,7 +100,7 @@ with tabs[0]:
 
     st.title("Visão Geral da Câmara dos Deputados")
     try:
-        with open('data/config.yaml', 'r', encoding='utf-8') as file:
+        with open(file_config, 'r', encoding='utf-8') as file:
             yaml_data = yaml.safe_load(file)
             yaml_string = yaml.dump(yaml_data, allow_unicode=True)
             st.text_area("Configurações", yaml_string, height=900)
@@ -101,7 +111,7 @@ with tabs[0]:
 
     st.title("Distribuição dos Deputados por Partido")
     try:
-        image = Image.open('C:/Users/RodrigoPintoMesquita/Documents/GitHub/DR4_AT/docs/distribuicao_deputados.png')
+        image = Image.open(file_distribuicao_deputados)
         st.image(image)
     except FileNotFoundError:
         st.error("Arquivo distribuicao_deputados.png não encontrado.")
@@ -111,7 +121,7 @@ with tabs[0]:
 
     st.title("Análise da Distribuição de Deputados por Partido")
     try:
-        with open('data/insights_distribuicao_deputados.json', 'r', encoding='utf-8') as file:
+        with open(file_insights_distribuicao_deputados, 'r', encoding='utf-8') as file:
             json_data = json.load(file)
             markdown_text = json_data['text']
             st.markdown(markdown_text)
@@ -127,7 +137,7 @@ with tabs[0]:
 with tabs[1]:
     st.title('Insights sobre Despesas dos Deputados')
     try:
-        with open('data/insights_despesas_deputados.json', 'r', encoding='utf-8') as f:
+        with open(file_insights_despesas_deputados, 'r', encoding='utf-8') as f:
             data = json.load(f)
             for item in data:
                 analysis_title = item['analysis_title'].replace('"', '').replace('\\', '').replace('$', '')
@@ -149,7 +159,7 @@ with tabs[1]:
         st.error(f"Erro inesperado: {e}")
 
     try:
-        df_despesas = pd.read_parquet('data/serie_despesas_diárias_deputados.parquet')
+        df_despesas = pd.read_parquet(file_serie_despesas_diárias_deputados)
         
         #Docstrings
         df_despesas.__doc__ = """DataFrame contendo as despesas diárias dos deputados.
