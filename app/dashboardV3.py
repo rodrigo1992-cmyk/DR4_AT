@@ -141,12 +141,7 @@ with tabs[1]:
             data = json.load(f)
             for item in data:
                 analysis_title = item['resposta'].replace('"', '').replace('\\', '').replace('$', '')
-                insight = item['insight'].replace('"', '').replace('\\', '').replace('$', '')
-                highest_spending_categories = item.get('highest_spending_categories', '').replace('"', '').replace('\\', '').replace('$', '')
                 st.write(f"**Análise:** {analysis_title}")
-                st.write(f"**Insight:** {insight}")
-                if highest_spending_categories:
-                    st.write(f"**Maiores categorias de gastos:** {highest_spending_categories}")
                 st.markdown("---")
 
     except FileNotFoundError:
