@@ -181,7 +181,7 @@ with tabs[1]:
 
 with tabs[2]:
     st.title('Assistente Virtual')
-    messages = st.container(height=700)
+    messages = st.container(height=400)
     
     if "welcome" not in st.session_state:
         st.session_state.welcome = True
