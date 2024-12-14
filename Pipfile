@@ -3,13 +3,17 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[[source]]
+url = "https://download.pytorch.org/whl/cpu"
+verify_ssl = true
+name = "downloadpytorch"
+
 [packages]
 streamlit = "*"
 google-generativeai = "*"
 python-dotenv = "*"
 pandas = "*"
 transformers = "*"
-torch = "*"
 tiktoken = "*"
 matplotlib = "*"
 plotly = "*"
@@ -19,6 +23,7 @@ pypdf2 = "*"
 imageio = "*"
 faiss-cpu = "*"
 sentence-transformers = "*"
+torch = {version = "*", index = "downloadpytorch"}
 
 [dev-packages]
 
