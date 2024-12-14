@@ -19,7 +19,7 @@ def get_deputados():
     dados = response.json()['dados']
 
     df = pd.DataFrame(dados)
-    df.to_parquet(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\deputados.parquet')
+    df.to_parquet('./data/deputados.parquet')
 
     return df
 
@@ -36,8 +36,8 @@ def get_despesas():
     url_base = "https://dadosabertos.camara.leg.br/api/v2"
     df = pd.DataFrame()
 
-    df_deps = pd.read_parquet(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\deputados.parquet')
-    path_despesas = r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\serie_despesas_diárias_deputados.parquet'
+    df_deps = pd.read_parquet('./data/deputados.parquet')
+    path_despesas = './data/serie_despesas_diárias_deputados.parquet'
 
     params = {
         'ano': 2024,
@@ -125,7 +125,7 @@ def get_proposicoes():
                 
             except: pass
         
-    df.to_parquet(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\proposicoes_deputados.parquet')
+    df.to_parquet('./data/proposicoes_deputados.parquet')
 
     return df
         
@@ -247,7 +247,7 @@ def sumarizacao_final(dict_summaries):
         #Há cota de 15 chamadas por minuto, então tive de adicionar um bom tempo entre chamadas para não exceder.
         time.sleep(4.5)
 
-    df_summaries.to_json(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\sumarizacao_proposicoes.json', orient='records', indent=4, force_ascii=False)
+    df_summaries.to_json('./data/sumarizacao_proposicoes.json', orient='records', indent=4, force_ascii=False)
 
 
 def unificar_datasets():
@@ -258,7 +258,7 @@ def unificar_datasets():
     #Cada Json está em um formato diferente, então está sendo necessário fazer a conversão manualmente deixando em um mesmo formato de lista.
 
     #Importando arquivo de distribuição de deputados e transformando em lista
-    with open(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\insights_distribuicao_deputados.json', 'r', encoding='utf-8') as file:
+    with open('./data/insights_distribuicao_deputados.json', 'r', encoding='utf-8') as file:
         texto = json.load(file)
         texto = texto['text'].replace('*', '')
 
@@ -269,7 +269,7 @@ def unificar_datasets():
         listas.append(item)
 
     #Importando arquivo de distribuição de despesas e transformando em lista
-    with open(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\insights_despesas_deputados.json', 'r', encoding='utf-8') as file:
+    with open('./data/insights_despesas_deputados.json', 'r', encoding='utf-8') as file:
         texto = json.load(file)
     lista_temp = []
     for item in texto:
@@ -280,7 +280,7 @@ def unificar_datasets():
         listas.append(item)
 
     #Importando arquivo de proposições e transformando em lista
-    with open(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\sumarizacao_proposicoes.json', 'r', encoding='utf-8') as file:
+    with open('./data/sumarizacao_proposicoes.json', 'r', encoding='utf-8') as file:
         texto = json.load(file)
 
     lista_temp = []
@@ -292,5 +292,5 @@ def unificar_datasets():
         listas.append(item)
 
     #Exportar para arquivo json
-    with open(r'C:\Users\RodrigoPintoMesquita\Documents\GitHub\DR4_AT\data\input_embedding.json', 'w', encoding='utf-8') as file:
+    with open('./data/input_embedding.json', 'w', encoding='utf-8') as file:
         json.dump(listas, file, ensure_ascii=False, indent=4)

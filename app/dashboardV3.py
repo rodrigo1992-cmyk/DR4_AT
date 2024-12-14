@@ -12,11 +12,11 @@ from sentence_transformers import SentenceTransformer
 import numpy as np
 
 def search_and_self_ask(user_input):
-    with open('./data/input_embedding.json', 'r', encoding='utf-8') as file:
+    with open('data/input_embedding.json', 'r', encoding='utf-8') as file:
         texto = json.load(file)
         
     model_name = 'neuralmind/bert-base-portuguese-cased'
-    llm_model_dir = './data/bertimbau_'
+    llm_model_dir = 'data/bertimbau_'
 
     embedding_model = SentenceTransformer(model_name, cache_folder=llm_model_dir, device='cpu')
 
@@ -90,7 +90,7 @@ with tabs[0]:
 
     st.title("Visão Geral da Câmara dos Deputados")
     try:
-        with open('./data/config.yaml', 'r', encoding='utf-8') as file:
+        with open('data/config.yaml', 'r', encoding='utf-8') as file:
             yaml_data = yaml.safe_load(file)
             yaml_string = yaml.dump(yaml_data, allow_unicode=True)
             st.text_area("Configurações", yaml_string, height=900)
@@ -111,7 +111,7 @@ with tabs[0]:
 
     st.title("Análise da Distribuição de Deputados por Partido")
     try:
-        with open('./data/insights_distribuicao_deputados.json', 'r', encoding='utf-8') as file:
+        with open('data/insights_distribuicao_deputados.json', 'r', encoding='utf-8') as file:
             json_data = json.load(file)
             markdown_text = json_data['text']
             st.markdown(markdown_text)
@@ -127,7 +127,7 @@ with tabs[0]:
 with tabs[1]:
     st.title('Insights sobre Despesas dos Deputados')
     try:
-        with open('./data/insights_despesas_deputados.json', 'r', encoding='utf-8') as f:
+        with open('data/insights_despesas_deputados.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
             for item in data:
                 analysis_title = item['analysis_title'].replace('"', '').replace('\\', '').replace('$', '')
@@ -149,7 +149,7 @@ with tabs[1]:
         st.error(f"Erro inesperado: {e}")
 
     try:
-        df_despesas = pd.read_parquet('./data/serie_despesas_diárias_deputados.parquet')
+        df_despesas = pd.read_parquet('data/serie_despesas_diárias_deputados.parquet')
         
         #Docstrings
         df_despesas.__doc__ = """DataFrame contendo as despesas diárias dos deputados.
