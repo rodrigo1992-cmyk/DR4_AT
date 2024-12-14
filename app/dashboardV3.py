@@ -140,7 +140,7 @@ with tabs[1]:
         with open(file_insights_despesas_deputados, 'r', encoding='utf-8') as f:
             data = json.load(f)
             for item in data:
-                analysis_title = item['analysis_title'].replace('"', '').replace('\\', '').replace('$', '')
+                analysis_title = item['resposta'].replace('"', '').replace('\\', '').replace('$', '')
                 insight = item['insight'].replace('"', '').replace('\\', '').replace('$', '')
                 highest_spending_categories = item.get('highest_spending_categories', '').replace('"', '').replace('\\', '').replace('$', '')
                 st.write(f"**Análise:** {analysis_title}")
