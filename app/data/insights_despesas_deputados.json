@@ -3,8 +3,6 @@
         "resposta": "A análise dos gastos médios dos deputados revela grandes discrepâncias.  Deputados como Glaustin da Fokus (20394.5), Antônio Doido (13123.43), e Giacobo (11277.06) apresentaram gastos significativamente acima da média, enquanto outros, como  Carlos Jordy (-843.51),  Fábio Macedo (-1846.1), e Rui Falcão (-2153.83), registraram valores consideravelmente abaixo, indicando a necessidade de investigação sobre as razões dessas diferenças."
     },
     {
-        "analysis_title": "Total de Despesas por Tipo",
-        "insight": "Determinar quais tipos de despesas consomem a maior parte do orçamento público, auxiliando na identificação de áreas potenciais para otimização de recursos ou revisão de políticas.",
         "resposta": "As maiores despesas são com 'DIVULGAÇÃO DA ATIVIDADE PARLAMENTAR' (R$ 3.459.920,35), 'MANUTENÇÃO DE ESCRITÓRIO DE APOIO À ATIVIDADE PARLAMENTAR' (R$ 2.570.355,25), 'COMBUSTÍVEIS E LUBRIFICANTES' (R$ 1.316.519,40) e 'LOCAÇÃO OU FRETAMENTO DE VEÍCULOS AUTOMOTORES' (R$ 1.026.253,86).  A análise sugere que uma revisão nas políticas e otimização de recursos nestas áreas poderia gerar significativa economia."
     },
     {
